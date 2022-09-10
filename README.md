@@ -59,7 +59,7 @@ var out = replace( 'beep', /e/g, 'o' );
 // returns 'boop'
 ```
 
-If provided a function as the [third argument][mdn-string-replace], the function is invoked for each match, and the function's return value is used as the replacement string.
+If provided a function as the third argument, the function is invoked for each match, and the function's return value is used as the replacement string.
 
 ```javascript
 function replacer( match, p1 ) {
@@ -75,6 +75,10 @@ var out = replace( str, /([^\s]+)/gi, replacer );
 <!-- /.usage -->
 
 <section class="notes">
+
+## Notes
+
+-   The function assumes that the `search` argument is a [regular expression][mdn-regexp]. Accordingly, this function should **not** be assumed to be a drop-in replacement for [`String.prototype.replace`][mdn-string-replace].
 
 </section>
 
@@ -183,6 +187,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/string-base-replace/main/LICENSE
 
 [mdn-string-replace]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+[mdn-regexp]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 
 </section>
 
