@@ -24,38 +24,30 @@ limitations under the License.
 
 > Replace search occurrences with a replacement string.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/string-base-replace
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-replace = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var replace = require( 'path/to/vendor/umd/string-base-replace/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.replace;
-})();
-</script>
+var replace = require( '@stdlib/string-base-replace' );
 ```
 
 #### replace( str, search, newval )
@@ -67,7 +59,7 @@ var out = replace( 'beep', /e/g, 'o' );
 // returns 'boop'
 ```
 
-If provided a function as the [third argument][mdn-string-replace], the function is invoked for each match, and the function's return value is used as the replacement string.
+If provided a function as the third argument, the function is invoked for each match, and the function's return value is used as the replacement string.
 
 ```javascript
 function replacer( match, p1 ) {
@@ -84,6 +76,10 @@ var out = replace( str, /([^\s]+)/gi, replacer );
 
 <section class="notes">
 
+## Notes
+
+-   The function assumes that the `search` argument is a [regular expression][mdn-regexp]. Accordingly, the function should **not** be used as a general drop-in replacement for [`String.prototype.replace`][mdn-string-replace].
+
 </section>
 
 <!-- /.notes -->
@@ -94,14 +90,9 @@ var out = replace( str, /([^\s]+)/gi, replacer );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-capitalize@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var capitalize = require( '@stdlib/string-base-capitalize' );
+var replace = require( '@stdlib/string-base-replace' );
 
 var out = replace( 'Hello World', /world/i, 'Mr. President' );
 // returns 'Hello Mr. President'
@@ -112,11 +103,6 @@ function replacer( match, p1 ) {
 var str = 'Oranges and lemons say the bells of St. Clement\'s';
 out = replace( str, /([^\s]*)/gi, replacer );
 // returns 'Oranges And Lemons Say The Bells Of St. Clement\'s'
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -170,8 +156,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/string-base-replace.svg
 [npm-url]: https://npmjs.org/package/@stdlib/string-base-replace
 
-[test-image]: https://github.com/stdlib-js/string-base-replace/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/string-base-replace/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/string-base-replace/actions/workflows/test.yml/badge.svg?branch=v0.0.1
+[test-url]: https://github.com/stdlib-js/string-base-replace/actions/workflows/test.yml?query=branch:v0.0.1
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/string-base-replace/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/string-base-replace?branch=main
@@ -201,6 +187,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/string-base-replace/main/LICENSE
 
 [mdn-string-replace]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+[mdn-regexp]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 
 </section>
 
