@@ -31,7 +31,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@deno/mod.js';
+import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@v0.0.2-deno/mod.js';
 ```
 
 #### replace( str, search, newval )
@@ -76,7 +76,7 @@ var out = replace( str, /([^\s]+)/gi, replacer );
 
 ```javascript
 import capitalize from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-capitalize@deno/mod.js';
-import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@deno/mod.js';
+import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@v0.0.2-deno/mod.js';
 
 var out = replace( 'Hello World', /world/i, 'Mr. President' );
 // returns 'Hello Mr. President'
