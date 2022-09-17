@@ -31,7 +31,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@esm/index.mjs';
+import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@v0.0.2-esm/index.mjs';
 ```
 
 #### replace( str, search, newval )
@@ -81,7 +81,7 @@ var out = replace( str, /([^\s]+)/gi, replacer );
 <script type="module">
 
 import capitalize from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-capitalize@esm/index.mjs';
-import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@esm/index.mjs';
+import replace from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-base-replace@v0.0.2-esm/index.mjs';
 
 var out = replace( 'Hello World', /world/i, 'Mr. President' );
 // returns 'Hello Mr. President'
