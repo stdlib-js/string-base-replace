@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2022 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,46 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var replace = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof replace, 'function', 'main export is a function' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
-});
-
-tape( 'the function replaces matches of a regular expression', function test( t ) {
-	var expected;
-	var out;
-
-	out = replace( 'aBcDeFgHiJkLmNoPqRsTuVwXYZ', /[A-Z]+/, '' );
-	expected = 'acDeFgHiJkLmNoPqRsTuVwXYZ';
-	t.equal( out, expected, 'replaces letters matching the regular expression (first occurrence)' );
-
-	out = replace( 'aBcDeFgHiJkLmNoPqRsTuVwXYZ', /[A-Z]+/g, '' );
-	expected = 'acegikmoqsuw';
-	t.equal( out, expected, 'replaces letters matching the regular expression (global)' );
-
-	t.end();
-});
-
-tape( 'the function replaces matches with values returned by a replacer function', function test( t ) {
-	var expected;
-	var out;
-	var str;
-
-	str = 'Oranges and lemons say the bells of St. Clement\'s';
-	out = replace( str, /([^\s]+)/gi, replacer );
-
-	expected = '/Oranges/ /and/ /lemons/ /say/ /the/ /bells/ /of/ /St./ /Clement\'s/';
-	t.equal( out, expected, 'replaces matches using replacer function' );
-
-	t.end();
-
-	function replacer( match, p1 ) {
-		return '/' + p1 + '/';
-	}
 });
